@@ -19,6 +19,7 @@ test_that("generic keys produce expected output", {
     #' @seealso test
     #' @concept test
     #' @encoding test
+    #' @todo test
     #' @name a
     NULL")[[1]]
   expect_equal(get_tag(out, "references")$values, "test")
@@ -26,6 +27,7 @@ test_that("generic keys produce expected output", {
   expect_equal(get_tag(out, "seealso")$values, "test")
   expect_equal(get_tag(out, "concept")$values, "test")
   expect_equal(get_tag(out, "encoding")$values, "test")
+  expect_equal(get_tag(out, "todo")$values, "test")
   expect_equal(get_tag(out, "author")$values, "test")
 })
 

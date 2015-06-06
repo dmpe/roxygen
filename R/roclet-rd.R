@@ -24,7 +24,8 @@ register.preref.parsers(parse.value,
                         'source',
                         'encoding',
                         'description',
-                        'details')
+                        'details',
+                        'todo')
 
 register.preref.parsers(parse.examples,
                         "examples")
@@ -103,7 +104,7 @@ roclet_rd_one <- function(partitum, base_path, env) {
 
   has_rd <- any(names(partitum) %in% c("description", "param", "return",
     "title", "example", "examples", "name", "rdname", "usage",
-    "details", "introduction", "describeIn"))
+    "details", "introduction", "describeIn", "todo"))
   if (!has_rd) return()
 
   if (any(names(partitum) == "noRd")) return()
@@ -148,6 +149,7 @@ roclet_rd_one <- function(partitum, base_path, env) {
   add_tag(rd, process_had_tag(partitum, 'format'))
   add_tag(rd, process_had_tag(partitum, 'source'))
   add_tag(rd, process_had_tag(partitum, 'seealso'))
+  add_tag(rd, process_had_tag(partitum, 'todo'))
   add_tag(rd, process_had_tag(partitum, "references"))
   add_tag(rd, process_had_tag(partitum, 'concept'))
   add_tag(rd, process_had_tag(partitum, 'return', function(tag, param) {

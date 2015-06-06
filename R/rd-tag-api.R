@@ -121,6 +121,8 @@ format.seealso_tag <- format_collapse
 format.source_tag <- format_collapse
 #' @export
 format.value_tag <- format_collapse
+#' @export
+format.todo_tag <- format_collapse
 
 # Tags that don't have output ------------------------------------------------
 
